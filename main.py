@@ -3,19 +3,60 @@ import random
 random_int = random.randint(0, 100)
 
 def curse_random_int():
-        print(f"Fuck you, {random_int}")
+    print(f"Fuck you, {random_int}")
 
 curse_random_int()
+
 
 names_list = ["Ashley", "Robert", "Alejandro", "Jose", "Brigitte"]
 you_are_a_bitch = True
 
 if len(names_list) >= random_int or you_are_a_bitch: # Of course you're
-        names_list.append("Barry")
+    names_list.append("Barry")
 
 print(names_list)
 print(names_list[1+1])
 
+
 liste = [1, 2]
 one, _ = liste
 print(one)
+
+
+# Commented because it was annoying on runtime
+# while I was trying other things.
+""" bruh = ('ayo', 'ooomaigaa', 'yessir', 'goofy', 'ahh')
+try:
+	print(bruh.index(input('What you aiming at?\n')))
+except ValueError:
+	print('Bruh who you trynna call smh') """
+
+
+capyslay = {'chuiguire', 'rissotto', 'gort', 'carpincho'}
+if len(capyslay) > 20:
+    print(capyslay) 
+elif len(capyslay) < 10:
+    print('Capy slay') 
+
+new_capy = {'py', 'go', 'rs'}
+print(new_capy.union(capyslay))
+
+
+giorgio_dict = {
+    "name": "Giorgio",
+    "surname": "Giovanni",
+    "hobbie": "dance",
+    "age": "900a.c"
+}
+print(f"Giorgio loves to {giorgio_dict['hobbie']}.")
+print("You're goddamn right. Giorgio is the best dancer.")
+
+for i in giorgio_dict.values():
+    if i != "Giorgio":
+        print(f"- {i}")
+    else:
+        print("- Giorgio is an amazing duck.")
+
+capy_is_god = True
+if capy_is_god:
+    print("Capy supremacy")
