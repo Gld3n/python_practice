@@ -94,5 +94,3 @@ my_capy.slay()        # (solution) the function is being called directly  // if 
 Capybara("GG").slay() # also a way to call it without assigning it // same case as above
 
 print("==================================================================")
-
-# Exceptions
