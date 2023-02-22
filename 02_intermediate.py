@@ -3,7 +3,7 @@ from datetime import datetime
 now = datetime.now()
 timestamp = datetime.timestamp(now)
 
-date = {
+date: dict = {
         "year": now.year,
         "month": now.month,
         "day": now.day,
@@ -21,3 +21,10 @@ def formated_date(date) -> datetime:
 
 f_date = formated_date(date)
 print(f_date)
+
+print("\n====================================================================\n")
+
+sqrts = [i * i for i in range(40 + 1)] 
+print(sqrts)
+if 1024 in sqrts:
+        print(1024 // 32)

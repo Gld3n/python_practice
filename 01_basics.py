@@ -14,7 +14,7 @@ print("==================================================================")
 names_list = ["Ashley", "Robert", "Alejandro", "Jose", "Brigitte"]
 you_are_a_bitch = True
 
-if len(names_list) >= random_int or you_are_a_bitch: # Of course you're
+if (len(names_list) >= random_int) or you_are_a_bitch: # Of course you're
     names_list.append("Barry")
 
 print(names_list)
