@@ -8,10 +8,10 @@ next number is the sum of the last two numbers.
 """
 
 def fib() -> None:
-    prev = 0
-    next = 1
+    prev: int = 0
+    next: int = 1
     for i in range(0, 50):
-        fibo = prev + next
+        fibo: int = prev + next
         prev = next
         next = fibo
         print(fibo)

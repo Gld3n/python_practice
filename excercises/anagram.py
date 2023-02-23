@@ -7,10 +7,10 @@ returns a boolean.
 """
 
 # * Verbose solution
-def is_anagram(word_one, word_two) -> bool:
-    word_one_list = {i for i in word_one}
-    word_two_list = {i for i in word_two}
-    diff = word_one_list.difference(word_two_list)
+def is_anagram(word_one: str, word_two: str) -> bool:
+    word_one_list: set = {i for i in word_one}
+    word_two_list: set = {i for i in word_two}
+    diff: set = word_one_list.difference(word_two_list)
     
     if word_one.lower() == word_two.lower():
         return False

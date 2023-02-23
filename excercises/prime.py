@@ -5,11 +5,11 @@ After, make a program that prints the prime numbers
 from 1 to 100.
 """
 
-def is_prime(n) -> bool:
+def is_prime(n: int) -> bool:
     if n < 2:
         return False
     
-    divisors = []
+    divisors: list = []
     for i in range(1, n+1):
         if n % i == 0:
             divisors.append(i)
@@ -22,13 +22,14 @@ def is_prime(n) -> bool:
 print(is_prime(7)) # True
 print(is_prime(10)) # False
 
+
 def prime_numbers() -> None:
     for n in range(2, 101):
         
         if n > 2:
             for i in range(2, n):
                 
-                divisible = False
+                divisible: bool = False
                 
                 if n % i == 0:
                     print(f"{n}   {i}")
