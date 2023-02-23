@@ -1,5 +1,5 @@
 """
-! Prime number
+! Prime number challenge
 Make a program that prints if a given number is prime or not.
 After, make a program that prints the prime numbers
 from 1 to 100.
@@ -22,7 +22,7 @@ def is_prime(n) -> bool:
 print(is_prime(7)) # True
 print(is_prime(10)) # False
 
-def prime_numbers() -> bool:
+def prime_numbers() -> None:
     for n in range(2, 101):
         
         if n > 2:
