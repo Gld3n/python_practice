@@ -1,0 +1,12 @@
+{
+    "Enable_import": true,
+    "Tab_size": 4,
+    "Capybaras": "Lovely animals",
+    "Json": "json.json",
+    "Liked_languages": [
+        "Python",
+        "Go",
+        "Rust",
+        "Typescript"
+    ]
+}

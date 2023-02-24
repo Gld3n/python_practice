@@ -150,3 +150,23 @@ else:
     print("This won't print") # else executes only if the -try- block succeeds
 finally:
     print("I'm inevitable") # will always execute at the end of the -try- block
+    
+    
+print("\n====================================================================\n")
+
+
+import json
+
+json_file = open("../python_practice/test.json", "w+")
+
+json_test = {
+    "Enable_import": True,
+    "Tab_size": 4,
+    "Capybaras": "Lovely animals",
+    "Json": "json.json",
+    "Liked_languages": ["Python", "Go", "Rust", "Typescript"]
+}
+
+json.dump(json_test, json_file, indent = json_test["Tab_size"])
+
+json_file.close()
