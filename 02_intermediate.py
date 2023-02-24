@@ -137,3 +137,16 @@ filtered = list(filter(lambda n: n % 2 == 0, numbers))
 
 print(f"\n{filtered}")
 print(list(filter(lambda n: n % 3 == 0, numbers)))
+
+
+print("\n====================================================================\n")
+
+
+try:
+    print(2 + "2")
+except TypeError:
+    print("You're trying to operate with two different type of values.")
+else:
+    print("This won't print") # else executes only if the -try- block succeeds
+finally:
+    print("I'm inevitable") # will always execute at the end of the -try- block
