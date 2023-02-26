@@ -20,7 +20,12 @@ def is_anagram(word_one: str, word_two: str) -> bool:
         
     return word_one == word_two
 
+"""
+! After some research, I noticed this function doesn't work properly
+! if words with repeated letters are given (e.g: Alabama).
+"""
 is_anagram("amor", "roma")
+
 
 # * Direct solution
 def is_anagram_2(first_word, second_word) -> bool:
@@ -29,4 +34,5 @@ def is_anagram_2(first_word, second_word) -> bool:
     
     return sorted(first_word.lower()) == sorted(second_word.lower())
 
+#! This function would be a correct solution
 print(is_anagram_2("pato", "topa"))
