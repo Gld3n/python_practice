@@ -165,33 +165,44 @@ def draw_check():
             question_opt()
             
             return draw_check()
-            
-    #* done in case the response makes a draw again
+    
+    # checks a second time to see wether there's a draw or not
     elif draw_times > 1:
-        print("""\nWell, it've been hard. I'm going to pick a random house for you, since you are a special
+        draw = checker.most_common(3)
+        
+        # in case there's no draw after the checkup
+        if draw[0][1] != draw[1][1]: 
+            print("\nBroke the deadlock. Making a decision now...\n")
+            for i in range(0,3):
+                print("...\n")
+                sleep(1)
+                
+            return max(draw, key = lambda points: draw[0])[0]
+        
+        #* done in case the response makes a draw again 
+        print("""\nWell, it've been hard. I'm going to pick a -semi- random house for you, since you are a special
         wizard, and can't fit in only one house. I'm amazed.\n""")
         
+        for i in range(0,3):
+                print("...\n")
+                sleep(1)
+                
         final_house = choice(draw)
         return final_house[0]
-         
-    # in case there's no draw        
-    else:
-        print("Broke the deadlock. Making a decision now...")
-        for i in range(0,3):
-            print("...\n")
-            sleep(1)
-            
-        # the final selection will be the max value, since there's no draws in the array
-        final_house = max(draw, key = lambda points: draw[0]) 
-        print(final_house)
-        return final_house
+    
+    return
 
 result = draw_check()
-print(result)
 
-"""
-Obtain the house with the highest points based on the houses' values.
-! It will only print if there's no draw.
-"""
-house = max(houses, key = lambda points: houses[points])
-print(f"\nYou've been -sadly- selected for the {house} house. Congratulations... (not really).\n")
+if not(result):
+    """
+    Obtain the house with the highest points based on the houses' values.
+    ! It will only print if there's no draw or tie-breaker.
+    """
+    
+    house = max(houses, key = lambda points: houses[points])
+    print(f"\nYou've been selected for the {house} house. Congratulations.\n")
+
+else:
+    # prints in case of a previous draw
+    print(f"\nYou've been -hardly- selected for the {result} house. Congratulations... (not really).\n")
