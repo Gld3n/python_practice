@@ -145,13 +145,11 @@ while count < 6:
 # the times the function is called
 draw_times = 0
 
-# TODO: Refactor the function and make it work properly. Serious logic problem
 def draw_check():
     global draw_times
     draw_times += 1
     
     # making the houses dir a Counter so I can use the most_common function
-    #TODO: Learn more about the Counter attribute in order to take advantage of it
     checker = Counter(houses)
 
     # will look for the two highest points
@@ -179,7 +177,7 @@ def draw_check():
                 
             return max(draw, key = lambda points: draw[0])[0]
         
-        #* done in case the response makes a draw again 
+        #! done in case the response makes a draw again 
         print("""\nWell, it've been hard. I'm going to pick a -semi- random house for you, since you are a special
         wizard, and can't fit in only one house. I'm amazed.\n""")
         
