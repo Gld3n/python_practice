@@ -1,27 +1,58 @@
 # Decorators
 
 #! noob decorator
-def respectfully(func) -> any:
-    def wrapper():
-        func()
+""" def respectfully(func) -> any:
+    def wrapper(*args, **kwargs):
+        func(*args, **kwargs)
         print("How has your day been going?")
     return wrapper
 
 def greet(name:str):
-    print(f"Hello, {name}!")
+    print(f"Hello, {name}!") """
     
 # greet_respectfully = respectfully(greet("Robert"))
-# print((greet_respectfully))
+# print(greet_respectfully)
+
+import functools
 
 #! well implemented decorator
-def respectfully2(func) -> any:
-    def wrapper2():
-        func()
+def respectfully2(func):
+    @functools.wraps(func)
+    def wrapper2(*args, **kwargs):
+        result = func(*args, **kwargs)
         print("How has your day been going?")
+        return result   
     return wrapper2
 
 @respectfully2
-def greet(name:str):
-    print(f"Hello {name}!")
+def greet2(n):
+    return f"Hello, {n}!"
     
-greetings = greet("")
+a = greet2("Roberto")
+print(a)
+
+"""
+Example of a practical use of the decorators.
+The timer function returns the time it took the
+function to execute.
+"""
+import time
+
+def timer(func):
+    """Print the runtime of the decorated function"""
+    @functools.wraps(func)
+    def wrapper_timer(*args, **kwargs):
+        start_time = time.perf_counter()    # 1
+        value = func(*args, **kwargs)
+        end_time = time.perf_counter()      # 2
+        run_time = end_time - start_time    # 3
+        print(f"\nFinished {func.__name__!r} in {run_time:.4f} secs")
+        return value
+    return wrapper_timer
+
+@timer
+def waste_some_time(num_times):
+    for _ in range(num_times):
+        suma = sum([i**2 for i in range(10000)])
+    print(suma)
+waste_some_time(10)
