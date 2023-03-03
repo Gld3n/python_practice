@@ -54,5 +54,24 @@ def timer(func):
 def waste_some_time(num_times):
     for _ in range(num_times):
         suma = sum([i**2 for i in range(10000)])
-    print(suma)
-waste_some_time(10)
+    
+# waste_some_time(10)
+
+
+#! decorators with arguments
+def repeat(num_times):
+    """Will repeat the decorated function an arbitrary number of times."""
+    def decorator_repeat(func):
+        @functools.wraps(func)
+        def wrapper_repeat(*args, **kwargs):
+            for _ in range(num_times):
+                value = func(*args, **kwargs)
+            return value
+        return wrapper_repeat
+    return decorator_repeat
+
+@repeat(num_times=4)
+def add(a):
+    print(f"\n{a + 5}")
+
+add(100)
