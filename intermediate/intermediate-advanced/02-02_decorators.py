@@ -70,6 +70,8 @@ def repeat(num_times):
         return wrapper_repeat
     return decorator_repeat
 
+#! multiple decorators
+@timer
 @repeat(num_times=4)
 def add(a):
     print(f"\n{a + 5}")
