@@ -112,3 +112,21 @@ if __name__ == '__main__':
     
     while not q.empty():
         print(q.get())
+        
+#! Pools
+
+from multiprocessing import Pool
+
+def cube(n):
+    return n * n * n
+
+if __name__ == "__main__":
+    numbers = range(10)
+    pool = Pool()
+    
+    result = pool.map(cube, numbers)
+    
+    pool.close()
+    pool.join()
+    
+    print(result)
