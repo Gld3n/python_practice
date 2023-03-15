@@ -25,6 +25,10 @@ class JobOffers:
     def __init__(self) -> None:
         JobOffers.get_offers()
     
+    @staticmethod
+    def etiquette():
+        print("You must wear an orange suit to your interview.")
+    
     @classmethod
     def add_offer(cls, job_offer:JobOffer) -> None:
         cls.offers.append(job_offer)
@@ -36,9 +40,9 @@ class JobOffers:
         for o in cls.offers:
             if o == cls.offers[-1]:
                 try:
-                    print(o.offer_name, end=".")
+                    print(o.offer_name, end=".\n")
                 except AttributeError:
-                    print(o, end=".")
+                    print(o, end=".\n")
             else:
                 try:
                     print(o.offer_name, end=", ")
@@ -68,3 +72,5 @@ JobOffers.add_offer("Attorney")
 # print(JobOffers.offers)
 # print(JobOffers.n_offers)
 JobOffers.get_offers()
+
+JobOffers.etiquette()
