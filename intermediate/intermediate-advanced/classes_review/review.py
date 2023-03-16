@@ -36,6 +36,7 @@ class JobOffers:
     offers = []
     
     def __init__(self) -> None:
+        # Demonstrative
         JobOffers.get_offers()
     
     @staticmethod
