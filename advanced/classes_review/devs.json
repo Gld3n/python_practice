@@ -1,0 +1,47 @@
+[
+	{
+		"name": "Robert",
+		"age": 18,
+		"skills": [
+			"Python", 
+			"Django",
+			"FastAPI",
+			"SQLAlchemy",
+			"Go"
+		],
+		"pets": [
+			"Chiqui"
+		],
+		"has_degree": false
+	},
+	{
+		"name": "Alejandro",
+		"age": 18,
+		"skills": [
+			"Javascript", 
+			"Typescript",
+			"Rust",
+			"React",
+			"MarkDown"
+		]
+	},
+	{
+		"name": "Tim",
+		"age": 25,
+		"skills": [
+			"Python", 
+			"Regex",
+			"Flask",
+			"MongoDB",
+			"C++"
+		],
+		"pets": [
+			"Max",
+			"Piolin",
+			"Silvester",
+			"Tom",
+			"Jerry"
+		],
+		"has_degree": true
+	}
+]
