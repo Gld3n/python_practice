@@ -13,3 +13,18 @@ pows_walrus = [val for i in l if (val := i**2) > 30]
 end2 = time.perf_counter()
 result2 = f'elapsed: {end2 - start2:.1f} seconds'
 print(result2)
+
+# Another example
+
+done = False
+while not done:
+    command = input('Enter a command("q" for quit):')
+    if command == "q":
+        done = True
+    else:
+        print(f'Your command was: {command}')
+        
+#! with walrus
+
+while (command := input('Enter a command("q" for quit):')) != 'q':
+    print('Your command was: {command}')

@@ -12,7 +12,7 @@
 		"pets": [
 			"Chiqui"
 		],
-		"has_degree": false
+		"hasDegree": false
 	},
 	{
 		"name": "Alejandro",
@@ -42,6 +42,6 @@
 			"Tom",
 			"Jerry"
 		],
-		"has_degree": true
+		"hasDegree": true
 	}
 ]

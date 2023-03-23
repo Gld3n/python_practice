@@ -1,15 +1,16 @@
-import pydantic
-from typing import Optional
+from pydantic import BaseModel, validator, Field, constr, conint
 from json import load
 
-class Developer(pydantic.BaseModel):
-    name: str
-    age: int
+class Developer(BaseModel):
+    name: constr(strip_whitespace=True, strict=True, min_length=2)
+    age: conint(gt=16, le=80, strict=True)
     skills: set
-    pets: Optional[list]
-    has_degree: Optional[bool] = False
+    # Discovered the | operator, which does the same as Optional[]
+    #It's only available after Python 3.10
+    pets: list | None
+    has_degree: bool | None = Field(alias="hasDegree")
     
-    @pydantic.validator("skills")
+    @validator("skills")
     @classmethod
     def skills_detector(cls, skills):
         fastapi_detected = [s for s in skills if s == "FastAPI"]
@@ -21,4 +22,4 @@ class Developer(pydantic.BaseModel):
 developers = [Developer(**developer) for developer in load(open("devs.json"))]
 
 for dev in developers:
-    print(dev)
+    print(dev.json(by_alias=True), end="\n\n")
